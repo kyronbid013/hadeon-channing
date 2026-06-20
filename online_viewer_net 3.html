@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hadeon channing</title>
+
+<style>
+:root{
+    --gold:#d6b67a;
+    --light-brown:#e8d4b5;
+    --dark-brown:#4a2f1a;
+    --cream:#f7f0e5;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Georgia, serif;
+}
+
+body{
+    background:var(--cream);
+    color:var(--dark-brown);
+}
+
+/* Top Banner */
+.banner{
+    background:var(--gold);
+    text-align:center;
+    padding:15px;
+    font-size:2rem;
+    font-style:italic;
+    text-transform:lowercase;
+    letter-spacing:2px;
+}
+
+/* Navigation */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 30px;
+    background:var(--light-brown);
+    border-bottom:2px solid var(--gold);
+}
+
+.menu-btn{
+    font-size:28px;
+    cursor:pointer;
+    color:var(--dark-brown);
+}
+
+.right-icons{
+    display:flex;
+    gap:20px;
+}
+
+.icon-btn{
+    cursor:pointer;
+    font-size:20px;
+    color:var(--dark-brown);
+    transition:0.3s;
+}
+
+.icon-btn:hover{
+    opacity:0.7;
+}
+
+/* Side Menu */
+.side-menu{
+    position:fixed;
+    top:0;
+    left:-300px;
+    width:300px;
+    height:100%;
+    background:var(--gold);
+    transition:0.4s;
+    padding-top:80px;
+    z-index:999;
+}
+
+.side-menu.active{
+    left:0;
+}
+
+.side-menu a{
+    display:block;
+    padding:20px 30px;
+    text-decoration:none;
+    color:var(--dark-brown);
+    font-size:1.2rem;
+    border-bottom:1px solid rgba(74,47,26,.2);
+}
+
+.side-menu a:hover{
+    background:rgba(255,255,255,.2);
+}
+
+/* Hero */
+.hero{
+    min-height:80vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero h1{
+    font-size:5rem;
+    font-style:italic;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.3rem;
+    max-width:700px;
+    margin-bottom:30px;
+}
+
+.listen-btn{
+    padding:15px 35px;
+    border:none;
+    background:var(--dark-brown);
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    border-radius:30px;
+}
+
+.listen-btn:hover{
+    opacity:.9;
+}
+
+/* Featured Section */
+.section{
+    padding:80px 10%;
+}
+
+.section h2{
+    font-size:2.5rem;
+    margin-bottom:30px;
+}
+
+.album-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.album{
+    background:var(--light-brown);
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.album-cover{
+    height:250px;
+    background:var(--gold);
+    border-radius:10px;
+    margin-bottom:15px;
+}
+</style>
+</head>
+<body>
+
+<div class="banner">
+    hadeon channing
+</div>
+
+<nav class="navbar">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div class="right-icons">
+        <div class="icon-btn">⌕</div>
+        <div class="icon-btn">👤</div>
+        <div class="icon-btn">🛒</div>
+    </div>
+</nav>
+
+<div class="side-menu" id="menu">
+    <a href="#">Home</a>
+    <a href="#">Sign Up</a>
+    <a href="#">Login</a>
+    <a href="#">Create Account</a>
+    <a href="#">Music</a>
+    <a href="#">Tour</a>
+    <a href="#">Store</a>
+    <a href="#">Contact</a>
+</div>
+
+<section class="hero">
+    <h1>hadeon channing</h1>
+    <p>
+        singer • songwriter • artist
+    </p>
+    <button class="listen-btn">Listen Now</button>
+</section>
+
+<section class="section">
+    <h2>Featured Releases</h2>
+
+    <div class="album-grid">
+
+        <div class="album">
+            <div class="album-cover"></div>
+            <h3>Album One</h3>
+        </div>
+
+        <div class="album">
+            <div class="album-cover"></div>
+            <h3>Album Two</h3>
+        </div>
+
+        <div class="album">
+            <div class="album-cover"></div>
+            <h3>Album Three</h3>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
